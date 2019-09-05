@@ -16,14 +16,13 @@ describe('temperatureNetwork routes', () => {
     return mongoose.connection.dropDatabase();
   });
 
-  let temperature = null;
   let location = null;
 
   beforeEach(async() => {
     location = await Location.create({
       name: 'Mars'
     });
-    temperature = JSON.parse(JSON.stringify(await Temperature.create({ temperature: 38, location: location._id })));
+    await Temperature.create({ temperature: 38, location: location._id });
   });
 
   it('returns status code of 200 on request to /status', () => {
