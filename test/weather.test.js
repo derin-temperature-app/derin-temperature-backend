@@ -29,7 +29,7 @@ describe('weather routes', () => {
     await Temperature.create({ temperature: 37, location: location._id });
     await Temperature.create({ temperature: 33, location: location._id });
     await Temperature.create({ temperature: 33, location: location1._id });
-    await Temperature.create({ temperature: 33, location: location1._id });
+    await Temperature.create({ temperature: 32, location: location1._id });
   });
 
   it('can get all temperatures for a locaiton by ID using /temperatures/id', () => {
